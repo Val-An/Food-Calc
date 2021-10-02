@@ -390,11 +390,15 @@ window.addEventListener('DOMContentLoaded', () => {
 	 dots.push(dot)
   }
 
+  function deleteNoDigits(str) {
+	 return +str.replace(/\D/g, '')
+  }
+
   next.addEventListener('click', () => {
-    if (offset === +width.slice(0, width.length - 2) * (slides.length - 1)){
+    if (offset === deleteNoDigits(width) * (slides.length - 1)){
       offset = 0
 	 } else {
-		offset += +width.slice(0, width.length - 2)
+		offset += deleteNoDigits(width)
 	 }
 
     slidesField.style.transform = `translateX(-${offset}px)`
@@ -417,9 +421,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   prev.addEventListener('click', () => {
 	 if (offset === 0){
-		offset = +width.slice(0, width.length - 2) * (slides.length - 1)
+		offset = deleteNoDigits(width) * (slides.length - 1)
 	 } else {
-		offset -= +width.slice(0, width.length - 2)
+		offset -= deleteNoDigits(width)
 	 }
 
 	 slidesField.style.transform = `translateX(-${offset}px)`
@@ -445,7 +449,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const slideTo = e.target.getAttribute('data-slide-to')
 
 		slidesIndex = slideTo
-		offset = +width.slice(0, width.length - 2) * (slideTo - 1)
+		offset = deleteNoDigits(width) * (slideTo - 1)
 
 		slidesField.style.transform = `translateX(-${offset}px)`
 
@@ -459,5 +463,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		dots[slidesIndex - 1].style.opacity = 1
 	 })
   })
+
+
 
 })
