@@ -16,9 +16,20 @@
     "url": "https://github.com/Val-An/Food-Calc/issues"
   },
   "homepage": "https://github.com/Val-An/Food-Calc#readme",
+  "browserslist": [
+    "> 1%"
+  ],
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.19.0",
     "json-server": "^0.16.3",
     "webpack": "^5.59.1",
     "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
   }
 }
