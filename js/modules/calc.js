@@ -9,14 +9,14 @@ function calc() {
 		ratio
 
   if (localStorage.getItem('sex')){
-	 sex = localStorage.setItem('sex')
+	 sex = localStorage.getItem('sex')
   } else {
 	 sex = 'female'
-	 localStorage.setItem('sex', 'male')
+	 localStorage.setItem('sex', 'female')
   }
 
   if (localStorage.getItem('ratio')){
-	 ratio = localStorage.setItem('ratio')
+	 ratio = localStorage.getItem('ratio')
   } else {
 	 ratio = 1.375
 	 localStorage.setItem('ratio', 1.375)
